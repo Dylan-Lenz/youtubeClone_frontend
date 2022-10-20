@@ -1,5 +1,5 @@
 from django.urls import path, include
-from backend.comments.views import add_comments
+from django.urls import path, include
 from comments import views
 
 urlpatterns = [
