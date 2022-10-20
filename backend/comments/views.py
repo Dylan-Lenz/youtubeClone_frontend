@@ -14,3 +14,10 @@ def add_comments(request):
         serializer.save(user=request.user)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def video_comments(request, video_id):
+    video_id = Comments.objects.filter(video_id=request)
+    serializer = CommentSerializer(video_id, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
