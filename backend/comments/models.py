@@ -1,3 +1,10 @@
+from tkinter import CASCADE
+from unittest.util import _MAX_LENGTH
 from django.db import models
+from authentication.models import User
 
 # Create your models here.
+class Comments(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    video_id = models.CharField(max_length=11)
+    text = models.CharField(max_length=144)
