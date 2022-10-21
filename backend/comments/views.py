@@ -18,6 +18,6 @@ def add_comments(request):
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def video_comments(request, video_id):
-    video_id = Comments.objects.filter(video_id=request.data)
+    video_id = Comments.objects.filter(video_id=video_id)
     serializer = CommentSerializer(video_id, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
