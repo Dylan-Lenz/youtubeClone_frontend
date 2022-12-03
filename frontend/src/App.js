@@ -3,9 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
 // Pages Imports
-import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import YouTubePage from "./pages/YouTubePage/YouTubePage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -13,7 +13,7 @@ import Footer from "./components/Footer/Footer";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
-import YouTubePage from "./pages/YouTubePage/YouTubePage";
+
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
           path="/"
           element={
             <PrivateRoute>
-              <HomePage />
+              <YouTubePage />
             </PrivateRoute>
           }
         />
