@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 export default function SearchBar({updateSearches}) {
@@ -19,6 +20,9 @@ export default function SearchBar({updateSearches}) {
                     placeholder="Search..."
                     onChange={(e) => setSearch(e.target.v)
                 }/>
+                <Link to="/result">
+                <button type="submit" >Enter</button>
+                </Link>
             </form>
         </div>
     )
