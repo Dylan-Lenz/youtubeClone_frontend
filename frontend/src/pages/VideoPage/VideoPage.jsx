@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import SearchBar from "../../components/SearchBar/SearchBar";
 import { Link } from 'react-router-dom';
 
 
 
-const VideoPage = () => {
+const VideoPage = (props) => {
 
 
 
@@ -16,18 +16,10 @@ const VideoPage = () => {
       </div>
       <div className="vids">
         <Link to="/related">
-            <iframe>
-                <div>
-                    <button>Sample Video</button>
-                    <button>Sample Video</button>
-                    <button>Sample Video</button>
-                </div>
-                <div>
-                    <button>Sample Video</button>
-                    <button>Sample Video</button>
-                    <button>Sample Video</button>
-                </div>
-            </iframe>
+        <iframe title="player" type="text/html" width="690" height="360"
+            src= ''
+            frameborder="0">
+          </iframe>
           </Link>
       </div>
     </div>
