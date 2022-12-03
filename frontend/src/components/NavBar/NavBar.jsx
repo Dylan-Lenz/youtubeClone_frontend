@@ -1,10 +1,8 @@
 import React from "react";
 import { useContext } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import "./NavBar.css";
-import SearchBar from "../SeachBar/SearchBar";
-
 
 const Navbar = () => {
   const { logoutUser, user } = useContext(AuthContext);
@@ -13,12 +11,11 @@ const Navbar = () => {
     <div className="navBar">
       <ul>
         <li className="brand">
-          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            <b>YouTube HomePage for {user.username}</b>
-          </Link>
-        </li>
-        <li>
-          <SearchBar/>
+          {user ? (
+            <b>UsTube {user.username}</b>
+          ) : (
+            <b>UsTube </b>
+          )}
         </li>
         <li>
           {user ? (
@@ -33,3 +30,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+

@@ -4,14 +4,14 @@ import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 
 
-export default YouTubePage = () => {
+const YouTubePage = () => {
   const [user, token] = useAuth();
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        let response = await axios.get("", {
+        let response = await axios.get("https://jsonplaceholder.typicode.com/users", {
           headers: {
             Authorization: "Bearer " + token,
           },
@@ -29,3 +29,5 @@ export default YouTubePage = () => {
     </div>
   );
 };
+
+export default YouTubePage;

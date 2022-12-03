@@ -1,3 +1,16 @@
 .error {
   color: red;
 }
+
+button {
+  background: transparent;
+  border: 2px solid #C21222;
+  color: #C21222;
+  padding: 0.4rem 0.5rem;
+}
+
+button:hover {
+  background: #C21222;
+  color: white;
+  cursor: pointer;
+}

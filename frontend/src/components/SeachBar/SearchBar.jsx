@@ -14,7 +14,7 @@ export default function SearchBar({updateSearches}) {
         <form onSubmit={handSub}>
             <input
                 type="text"
-                placeholder="Search..."
+                placeholder="Search Videos"
                 onChange={(e) => setSearch(e.target.v)
             }/>
         </form>
