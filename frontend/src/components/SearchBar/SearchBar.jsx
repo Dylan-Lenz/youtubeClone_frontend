@@ -21,9 +21,10 @@ export default function SearchBar({updateSearches}) {
                     type="text"
                     placeholder="Search..."
                     onChange={(e) => setSearch(e.target.v)
-                }/>
+                    }
+                />
                 <Link to="/result">
-                <button className='searchBar__button' type="submit" >Enter</button>
+                    <button className='searchBar__button' type="submit" >Enter</button>
                 </Link>
             </form>
         </div>

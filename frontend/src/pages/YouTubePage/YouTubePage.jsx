@@ -11,15 +11,18 @@ import VideoDeck from '../../components/VideoDeck/VideoDeck';
 
 
 const YouTubePage = (props) => {
-
-  
   
   const [videos, setVideos] = useState([]);
+  const [searches, setSearches] = useState('ships');
   const {Key} = useParams({KEY});
-
+  
+  const updateSearches = () => {
+    let updatedSearches = [...searches];
+    setSearches(updatedSearches);
+  }
 
   async function fetchSearchVideos(){
-    let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=ships&key=${Key}&part=snippet&type=video&maxResults=6`,
+    let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=${searches}&key=${Key}&part=snippet&type=video&maxResults=6`,
     setVideos(response.data.results));
   }
 
@@ -42,7 +45,7 @@ const YouTubePage = (props) => {
   
   return (
     <div className = "container__main">
-        <SearchBar />
+        <SearchBar updateSearches={updateSearches}/>
         <VideoDeck mapVideos={() => mapVideos()} />
     </div>
   );
