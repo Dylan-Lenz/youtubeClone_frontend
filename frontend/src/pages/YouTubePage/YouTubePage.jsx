@@ -42,12 +42,8 @@ const YouTubePage = (props) => {
   
   return (
     <div className = "container__main">
-      <div className='searchBar'>
         <SearchBar />
-      </div>
-      <div className="container__sub">
-          <VideoDeck mapVideos={() => mapVideos()} />
-      </div>
+        <VideoDeck mapVideos={() => mapVideos()} />
     </div>
   );
 };

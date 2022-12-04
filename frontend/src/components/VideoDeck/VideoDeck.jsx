@@ -1,23 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import './VideoDeck.css'
 import VideoCard from '../VideoCard/VideoCard';
 
 const VideoDeck = (props) => {
     
     return ( 
         <div className='videoDeck'>
-            <Link to="/related" >
-            <div className='videoDeck__SetA'>
-                <VideoCard/>
-                <VideoCard/>
-                <VideoCard/>
-            </div>
-            <div className='videoDeck__SetB'>
-                <VideoCard/>
-                <VideoCard/>
-                <VideoCard/>
-            </div>
-            </Link>
+                <div className='videoDeck__SetA'>
+                    <ul>
+                        <li><VideoCard/></li>
+                        <li><VideoCard/></li>
+                        <li><VideoCard/></li>
+                    </ul>
+                </div>
+                <div className='videoDeck__SetB'>
+                    <ul>
+                        <li><VideoCard/></li>
+                        <li><VideoCard/></li>
+                        <li><VideoCard/></li>
+                    </ul>
+                </div>
             {props.mapVideos()}
         </div>
      );

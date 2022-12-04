@@ -12,9 +12,9 @@ const Navbar = () => {
       <ul>
         <li className="brand">
           {user ? (
-            <b>UsTube {user.username}</b>
+            <b>mocktube {user.username}</b>
           ) : (
-            <b>UsTube </b>
+            <b>mocktube </b>
           )}
         </li>
         <li>
