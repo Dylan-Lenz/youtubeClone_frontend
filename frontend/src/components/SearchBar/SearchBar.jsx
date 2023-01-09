@@ -1,32 +1,29 @@
-import React, { useState } from 'react';
-import "./SearchBar.css";
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
 
+const SearchBar = ({ handleSearch }) => {
+  const [search, setSearch] = useState("");
 
-export default function SearchBar({updateSearches}) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleSearch(search);
+    setSearch("");
+  };
 
-    const [search, setSearch] = useState('');
-    
-    const handSub = (e) => {
-        e.preventDefault();
-        updateSearches(search);
-    };
-            
-    return (
-        <div className='searchBar'>
-            <h1 className='searchBar__title'>Search For Videos</h1>
-            <form onSubmit={handSub}>
-                <input
-                    className='searchBar__input'
-                    type="text"
-                    placeholder="Search..."
-                    onChange={(e) => setSearch(e.target.v)
-                    }
-                />
-                <Link to="/result">
-                    <button className='searchBar__button' type="submit" >Enter</button>
-                </Link>
-            </form>
-        </div>
-    )
-}
+  return (
+    <form className="searchBar" onSubmit={handleSubmit}>
+      <label> Search For Videos{""}</label>
+      <br />
+      <input
+        type="text"
+        name="search"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      <br></br>
+      <br></br>
+      <button type="submit">Search!</button>
+    </form>
+  );
+};
+
+export default SearchBar;

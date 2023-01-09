@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import { useNavigate} from "react-router-dom";
+import { useNavigate, Link} from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import "./NavBar.css";
 
@@ -10,12 +10,10 @@ const Navbar = () => {
   return (
     <div className="navBar">
       <ul>
-        <li className="brand">
-          {user ? (
-            <b>mocktube {user.username}</b>
-          ) : (
-            <b>mocktube </b>
-          )}
+      <li className="brand">
+          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+            <b>mocktube {user ? user.username : null}</b>
+          </Link>
         </li>
         <li>
           {user ? (
@@ -30,5 +28,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
