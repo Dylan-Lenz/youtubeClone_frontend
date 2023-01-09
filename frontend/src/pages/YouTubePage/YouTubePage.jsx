@@ -2,7 +2,7 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import SearchResultsPage from "../SearchPage/SearchPage";
+import SearchPage from "../SearchPage/SearchPage";
 import { hardCodedData } from "../SearchPage/hardCodedData";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import VideoPage from "../VideoPage/VideoPage";
@@ -46,7 +46,7 @@ function YouTubePage() {
       <Routes>
         <Route
           path="/"
-          element={<SearchResultsPage results={videoResults} />}
+          element={<SearchPage results={videoResults} />}
         />
         <Route path="/:videoId" element={<VideoPage />} />
       </Routes>
