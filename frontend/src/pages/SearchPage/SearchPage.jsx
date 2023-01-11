@@ -1,7 +1,8 @@
 import React from "react";
 import VideoList from "../../components/VideoList/VideoList";
+import "./SearchPage.css";
 
-const SearchResultsPage = ({ results }) => {
+const SearchPage = ({ results }) => {
   return (
     <div>
       <div className="searchGrid">
@@ -11,4 +12,4 @@ const SearchResultsPage = ({ results }) => {
   );
 };
 
-export default SearchResultsPage;
+export default SearchPage;

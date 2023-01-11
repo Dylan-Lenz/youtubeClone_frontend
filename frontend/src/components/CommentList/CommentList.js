@@ -1,8 +1,10 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import useAuth from "../../hooks/useAuth";
+
 import Comment from "../Comment/Comment";
 import CommentForm from "../CommentForm/CommentForm";
+
 import { URL_HOST } from "../../urlHost";
 
 const CommentList = ({ videoId }) => {
@@ -15,7 +17,7 @@ const CommentList = ({ videoId }) => {
 
   const fetchComments = async (videoId) => {
     try {
-      let response = await axios.get(`${URL_HOST}/api/comments/${videoId}`);
+      let response = await axios.get(`${URL_HOST}/api/comments/${videoId}/`);
       setComments(response.data);
     } catch (error) {
       console.log(error.message);

@@ -1,5 +1,6 @@
 // General Imports
 import { Routes, Route, useNavigate } from "react-router-dom";
+import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import SearchPage from "../SearchPage/SearchPage";
