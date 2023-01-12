@@ -4,20 +4,18 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import SearchPage from "../SearchPage/SearchPage";
-import { hardCodedData } from "../SearchPage/hardCodedData";
+// import { hardCodedData } from "../SearchPage/hardCodedData";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import VideoPage from "../VideoPage/VideoPage";
 
+import {KEY} from "../../localKeySecure";
+
 function YouTubePage() {
-  const [videoResults, setVideoResults] = useState(hardCodedData);
+  const [videoResults, setVideoResults] = useState('');
   const navigate = useNavigate();
 
-  if (process.env.NODE_ENV !== "production") {
-    console.log("It's working!");
-  }
-
   useEffect(() => {
-    fetchResults("starwars");
+    fetchResults("ships");
   }, []);
 
   const fetchResults = async (searchTerm) => {
@@ -27,7 +25,7 @@ function YouTubePage() {
         {
           params: {
             q: searchTerm,
-            key: process.env.REACT_APP_YT_API_KEY,
+            key: KEY,
             part: "snippet",
             type: "video",
             maxResults: 5,

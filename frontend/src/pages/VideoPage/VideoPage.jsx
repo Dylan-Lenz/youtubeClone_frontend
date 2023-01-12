@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import { relatedData } from "./relatedHardCode";
 import axios from "axios";
 import "./VideoPage.css";
+import {KEY} from "../../localKeySecure";
 
 import CommentList from "../../components/CommentList/CommentList";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
@@ -12,7 +12,7 @@ import VideoList from "../../components/VideoList/VideoList";
 const VideoPage = () => {
   const { videoId } = useParams();
   const { state } = useLocation();
-  const [relatedVideos, setRelatedVideos] = useState(relatedData);
+  const [relatedVideos, setRelatedVideos] = useState('');
 
   useEffect(() => {
     fetchRelatedVideos(videoId);
@@ -26,7 +26,7 @@ const VideoPage = () => {
           params: {
             type: "video",
             relatedToVideoId: relatedVideoId,
-            key: process.env.REACT_APP_YT_API_KEY,
+            key: KEY,
             part: "snippet",
           },
         }

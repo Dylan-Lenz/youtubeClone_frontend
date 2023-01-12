@@ -41,10 +41,28 @@ const CommentList = ({ videoId }) => {
     }
   };
 
+  const addLike = async (commentLikes) => {
+    try {
+      await axios.post(
+        `${URL_HOST}/api/comments/`,
+        { video_id: videoId, value: commentLikes },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      fetchComments(videoId);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+
   return (
     <>
       {user ? (
-        <CommentForm submitComment={addComment} />
+        <CommentForm submitComment={addComment} submitLikes={addLike} />
       ) : (
         <p>Must be logged in to comment!</p>
       )}{" "}

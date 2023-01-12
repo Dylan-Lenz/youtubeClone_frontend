@@ -4,7 +4,8 @@ const CommentForm = ({ submitComment }) => {
   const [commentText, setCommentText] = useState("");
 
   return (
-    <form
+   <div>
+     <form
       className="commentForm"
       onSubmit={(e) => {
         e.preventDefault();
@@ -22,6 +23,7 @@ const CommentForm = ({ submitComment }) => {
         />
       </label>
     </form>
+   </div>
   );
 };
 
