@@ -28,7 +28,10 @@ const CommentList = ({ videoId }) => {
     try {
       await axios.post(
         `${URL_HOST}/api/comments/`,
-        { video_id: videoId, text: commentText },
+        { 
+          video_id: videoId, 
+          text: commentText,
+        },
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -41,28 +44,13 @@ const CommentList = ({ videoId }) => {
     }
   };
 
-  const addLike = async (commentLikes) => {
-    try {
-      await axios.post(
-        `${URL_HOST}/api/comments/`,
-        { video_id: videoId, value: commentLikes },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      fetchComments(videoId);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
+  
 
 
   return (
     <>
       {user ? (
-        <CommentForm submitComment={addComment} submitLikes={addLike} />
+        <CommentForm submitComment={addComment}  />
       ) : (
         <p>Must be logged in to comment!</p>
       )}{" "}
@@ -74,6 +62,7 @@ const CommentList = ({ videoId }) => {
               key={comment.id}
               text={comment.text}
               userName={comment.user.username}
+              likes={comment.likes}
             />
           );
         })

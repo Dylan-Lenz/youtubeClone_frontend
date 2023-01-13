@@ -1,19 +1,21 @@
-import React, { useState} from 'react';
+import React, { useState } from "react";
 
 
-
-const Comment = ({ text, userName}) => {
+const Comment = ({ text, userName }) => {
 
   const [commentLikes, setCommentLikes] = useState (0);
-
-  let addLike = () => setCommentLikes(commentLikes + 1);
+  const [commentDislikes, setCommentDislikes] = useState (0);
     
-  const handleOnClick = (e) => {
+  const handleLikes = (e) => {
     e.preventDefault();
-    addLike(commentLikes);
+    setCommentLikes(commentLikes + 1);
   }
-  
-  
+
+  const handleDislikes = (e) => {
+    e.preventDefault();
+    setCommentDislikes(commentDislikes + 1);
+  }
+
   return (
       <div>
         <h2>
@@ -21,8 +23,10 @@ const Comment = ({ text, userName}) => {
         </h2>
         <p>
           Likes: {commentLikes}
+          Dislikes: {commentDislikes}
         </p>
-          <button value={commentLikes} onClick={handleOnClick}>Like</button>
+          <button value={commentLikes} onClick={handleLikes}>Like</button>
+          <button value={commentDislikes} onClick={handleDislikes}>Like</button>
       </div>
     );
   };

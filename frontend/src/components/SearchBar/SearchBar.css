@@ -1,4 +1,8 @@
 
-.searchBar__input {
-    padding: .6em;
+
+
+.searchBar {
+    margin: 0;
+    padding: 1em;
+    box-sizing: inherit;
 }

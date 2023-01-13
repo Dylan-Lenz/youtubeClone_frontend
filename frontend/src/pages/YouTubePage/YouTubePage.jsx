@@ -28,7 +28,7 @@ function YouTubePage() {
             key: KEY,
             part: "snippet",
             type: "video",
-            maxResults: 5,
+            maxResults: 6,
           },
         }
       );
