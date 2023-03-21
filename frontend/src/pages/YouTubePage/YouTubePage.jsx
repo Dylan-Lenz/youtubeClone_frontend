@@ -4,7 +4,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import SearchPage from "../SearchPage/SearchPage";
-// import { hardCodedData } from "../SearchPage/hardCodedData";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import VideoPage from "../VideoPage/VideoPage";
 

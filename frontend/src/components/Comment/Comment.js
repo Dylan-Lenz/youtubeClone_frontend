@@ -26,7 +26,7 @@ const Comment = ({ text, userName }) => {
           Dislikes: {commentDislikes}
         </p>
           <button value={commentLikes} onClick={handleLikes}>Like</button>
-          <button value={commentDislikes} onClick={handleDislikes}>Like</button>
+          <button value={commentDislikes} onClick={handleDislikes}>DisLike</button>
       </div>
     );
   };
